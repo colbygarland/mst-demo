@@ -1,10 +1,3 @@
-## Simple NextJS template.
+## MST Demo
 
-### Libraries
-
-- NextJS
-- mobx-state-tree / mobx-react-lite
-- Tailwind
-- Typescript
-- Prettier
-- ESLint
+Small demo to show the power of mobx state tree.
