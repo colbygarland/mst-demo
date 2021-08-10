@@ -11,9 +11,11 @@ interface EmployeeBadgeProps {
 
 export const EmployeeBadge = (props: EmployeeBadgeProps) => {
   return (
-    <div className="shadow w-96 rounded-md">
-      <div className="bg-indigo-600 rounded-t-md">
-        <img src={props.image} alt={props.name} className="m-auto h-64" />
+    <div className="shadow xl:w-96 rounded-md">
+      <div className="bg-indigo-600 rounded-t-md cursor-pointer">
+        <Link href={`employees/${props.id}`}>
+          <img src={props.image} alt={props.name} className="m-auto h-64" />
+        </Link>
       </div>
       <div className="p-6">
         <p className="text-black font-bold text-2xl mb-4">

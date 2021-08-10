@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <PageHeader title="Home" />
       <Container>
-        <Title>Employees</Title>
+        <Title>Manually Displaying 🤮</Title>
         <Grid>
           <EmployeeBadge
             id="fgte-regr-ghjg-dfdg"
@@ -41,7 +41,7 @@ const Home = () => {
         </Grid>
       </Container>
       <Container>
-        <Title>Employees</Title>
+        <Title>Mapping Via MST 🔥</Title>
         <Grid>
           {employeeStore.employees.map((employee: EmployeeType) => (
             <EmployeeBadge

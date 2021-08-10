@@ -5,6 +5,8 @@ interface TitleProps {
 
 export const Title = (props: TitleProps) => {
   return (
-    <h2 className="text-4xl text-black font-bold mb-6">{props.children}</h2>
+    <h2 className="text-xl lg:text-4xl text-black font-bold mb-6">
+      {props.children}
+    </h2>
   );
 };

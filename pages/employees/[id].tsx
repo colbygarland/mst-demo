@@ -21,9 +21,9 @@ const Employee = () => {
     <>
       <PageHeader title={employee.name} />
       <Container>
-        <div className="flex">
-          <div className="mr-10">
-            <div className="bg-indigo-600 w-96 rounded shadow">
+        <div className="lg:flex">
+          <div className="mb-10 lg:mb-0 lg:mr-10">
+            <div className="bg-indigo-600 lg:w-96 rounded shadow">
               <img
                 src={employee.image}
                 alt={employee.name}
