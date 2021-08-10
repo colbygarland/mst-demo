@@ -24,7 +24,7 @@ export const EmployeeStore = types
   .model('EmployeeStore')
   .props({
     employees: types.array(Employee),
-    computedValuesVisible: types.optional(types.boolean, true),
+    computedValuesVisible: types.optional(types.boolean, false),
   })
   .views((self) => ({
     get employeeCount(): number {
