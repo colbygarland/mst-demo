@@ -1,4 +1,4 @@
-import { types } from 'mobx-state-tree';
+import { types, destroy } from 'mobx-state-tree';
 
 export interface EmployeeType {
   id: string;
@@ -6,7 +6,7 @@ export interface EmployeeType {
   email: string;
   phone: string;
   position: string;
-  image: string;
+  image?: string;
   bio: string;
 }
 
@@ -16,7 +16,7 @@ const Employee = types.model({
   email: types.string,
   phone: types.string,
   position: types.string,
-  image: types.string,
+  image: types.optional(types.string, '/images/seinfeld.png'),
   bio: types.string,
 });
 
@@ -30,6 +30,15 @@ export const EmployeeStore = types
       const employee = self.employees.find((e) => e.id === id);
       if (employee === undefined) return null;
       return employee;
+    },
+  }))
+  .actions((self) => ({
+    // Simply adds; doesn't check for existing employee (yet?)
+    add: (employee: EmployeeType): void => {
+      self.employees.push(employee);
+    },
+    delete: (employee: EmployeeType): void => {
+      destroy(employee);
     },
   }));
 
