@@ -29,6 +29,13 @@ export const EmployeeStore = types
     get employeeCount(): number {
       return self.employees.length;
     },
+    get employeePositions(): string {
+      const positions: string[] = [];
+      self.employees.map((e) => {
+        positions.push(e.position);
+      });
+      return positions.join(', ');
+    },
     getEmployeeById(id: string | string[] | undefined): EmployeeType | null {
       const employee = self.employees.find((e) => e.id === id);
       if (employee === undefined) return null;

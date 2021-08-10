@@ -6,10 +6,11 @@ import { ManuallyDisplay } from '../components/manuallyDisplay';
 import { MapViaMST } from '../components/mapViaMST';
 import { Observer } from '../components/observer';
 import { EmployeeCount } from '../components/employeeCount';
+import { EmployeePositions } from '../components/employeePositions';
 
 const Home = () => {
   return (
-    <>
+    <div className="pb-32">
       <PageHeader title="Home" />
       <Container>
         <Title>Manually Displaying 🤮</Title>
@@ -24,15 +25,17 @@ const Home = () => {
         <Observer />
       </Container>
       <Container>
-        <Title>Computed/Derived Values</Title>
-        <EmployeeCount />
-      </Container>
-      <Container>
         <Title>Adding a New Employee</Title>
         <AddNewEmployee />
       </Container>
-      <footer className="h-10 bg-indigo-600"></footer>
-    </>
+
+      <footer className="bg-indigo-600 text-white fixed bottom-0 w-full shadow">
+        <Container>
+          <EmployeeCount />
+          <EmployeePositions />
+        </Container>
+      </footer>
+    </div>
   );
 };
 
