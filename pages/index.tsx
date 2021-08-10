@@ -8,6 +8,7 @@ import { Observer } from '../components/observer';
 import { Quote } from '../components/quote';
 import { Footer } from '../components/footer';
 import { Snapshot } from '../components/snapshot';
+import { Autorun } from '../components/autorun';
 
 const Home = () => {
   return (
@@ -37,7 +38,10 @@ const Home = () => {
         <Title>Snapshots</Title>
         <Snapshot />
       </Container>
-
+      <Container>
+        <Title>Autorun</Title>
+        <Autorun />
+      </Container>
       <Footer />
     </div>
   );
