@@ -24,6 +24,7 @@ export const EmployeeStore = types
   .model('EmployeeStore')
   .props({
     employees: types.array(Employee),
+    computedValuesVisible: types.optional(types.boolean, true),
   })
   .views((self) => ({
     get employeeCount(): number {
@@ -49,6 +50,12 @@ export const EmployeeStore = types
     },
     delete: (employee: EmployeeType): void => {
       destroy(employee);
+    },
+    showComputedValues: (): void => {
+      self.computedValuesVisible = true;
+    },
+    hideComputedValues: (): void => {
+      self.computedValuesVisible = false;
     },
   }));
 

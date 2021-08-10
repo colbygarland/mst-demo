@@ -5,8 +5,8 @@ import { AddNewEmployee } from '../components/addNewEmployee';
 import { ManuallyDisplay } from '../components/manuallyDisplay';
 import { MapViaMST } from '../components/mapViaMST';
 import { Observer } from '../components/observer';
-import { EmployeeCount } from '../components/employeeCount';
-import { EmployeePositions } from '../components/employeePositions';
+import { Quote } from '../components/quote';
+import { Footer } from '../components/footer';
 
 const Home = () => {
   return (
@@ -28,13 +28,12 @@ const Home = () => {
         <Title>Adding a New Employee</Title>
         <AddNewEmployee />
       </Container>
+      <Container>
+        <Title>Async Actions Using Generators</Title>
+        <Quote />
+      </Container>
 
-      <footer className="bg-indigo-600 text-white fixed bottom-0 w-full shadow">
-        <Container>
-          <EmployeeCount />
-          <EmployeePositions />
-        </Container>
-      </footer>
+      <Footer />
     </div>
   );
 };
