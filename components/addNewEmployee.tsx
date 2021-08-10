@@ -9,8 +9,18 @@ export const AddNewEmployee = () => {
   const [phone, setPhone] = useState('');
   const [position, setPosition] = useState('');
   const [bio, setBio] = useState('');
+  const [photo, setPhoto] = useState('');
 
   const { employeeStore } = useStore();
+
+  function autofillEmployee() {
+    setName('Newman');
+    setEmail('newman@uspostalservice.com');
+    setPhone('615-3562');
+    setPosition('Postman');
+    setBio('Newman is the best');
+    setPhoto('/images/newman.png');
+  }
 
   function saveEmployee() {
     const id = generateId();
@@ -21,6 +31,9 @@ export const AddNewEmployee = () => {
       phone: phone,
       position: position,
       bio: bio,
+      ...(photo !== '' && {
+        image: photo,
+      }),
     };
     employeeStore.add(employee);
     setName('');
@@ -28,6 +41,7 @@ export const AddNewEmployee = () => {
     setPhone('');
     setPosition('');
     setBio('');
+    setPhoto('');
   }
 
   return (
@@ -39,6 +53,7 @@ export const AddNewEmployee = () => {
         onChange={(event) => {
           setName(event.target.value);
         }}
+        value={name}
       />
       <input
         type="text"
@@ -47,6 +62,7 @@ export const AddNewEmployee = () => {
         onChange={(event) => {
           setEmail(event.target.value);
         }}
+        value={email}
       />
       <input
         type="text"
@@ -55,6 +71,7 @@ export const AddNewEmployee = () => {
         onChange={(event) => {
           setPhone(event.target.value);
         }}
+        value={phone}
       />
       <input
         type="text"
@@ -63,6 +80,7 @@ export const AddNewEmployee = () => {
         onChange={(event) => {
           setPosition(event.target.value);
         }}
+        value={position}
       />
       <input
         type="text"
@@ -71,12 +89,19 @@ export const AddNewEmployee = () => {
         onChange={(event) => {
           setBio(event.target.value);
         }}
+        value={bio}
       />
       <button
         onClick={saveEmployee}
         className="mt-4 px-3 py-2 text-white bg-indigo-600 rounded shadow"
       >
         Save Employee
+      </button>
+      <button
+        onClick={autofillEmployee}
+        className="mt-4 ml-6 px-3 py-2 text-indigo-600 border border-indigo-600 rounded shadow"
+      >
+        Autofill Employee
       </button>
     </div>
   );

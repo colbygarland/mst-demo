@@ -26,6 +26,9 @@ export const EmployeeStore = types
     employees: types.array(Employee),
   })
   .views((self) => ({
+    get employeeCount(): number {
+      return self.employees.length;
+    },
     getEmployeeById(id: string | string[] | undefined): EmployeeType | null {
       const employee = self.employees.find((e) => e.id === id);
       if (employee === undefined) return null;

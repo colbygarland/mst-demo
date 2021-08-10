@@ -5,6 +5,7 @@ import { AddNewEmployee } from '../components/addNewEmployee';
 import { ManuallyDisplay } from '../components/manuallyDisplay';
 import { MapViaMST } from '../components/mapViaMST';
 import { Observer } from '../components/observer';
+import { EmployeeCount } from '../components/employeeCount';
 
 const Home = () => {
   return (
@@ -21,6 +22,10 @@ const Home = () => {
       <Container>
         <Title>Mapping Via MST 🔥 (OBSERVING)</Title>
         <Observer />
+      </Container>
+      <Container>
+        <Title>Computed/Derived Values</Title>
+        <EmployeeCount />
       </Container>
       <Container>
         <Title>Adding a New Employee</Title>
