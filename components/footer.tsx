@@ -7,7 +7,8 @@ import { EmployeePositions } from './employeePositions';
 export const Footer = observer(() => {
   const { employeeStore } = useStore();
   const classes = `bg-indigo-600 text-white fixed bottom-0 w-full shadow ${
-    employeeStore.computedValuesVisible ? 'z-10' : '-z-10 invisible'
+    // hide the footer if our computedValuesVisible is false
+    !employeeStore.computedValuesVisible && 'invisible'
   }`;
   return (
     <>
