@@ -7,6 +7,7 @@ import { MapViaMST } from '../components/mapViaMST';
 import { Observer } from '../components/observer';
 import { Quote } from '../components/quote';
 import { Footer } from '../components/footer';
+import { Snapshot } from '../components/snapshot';
 
 const Home = () => {
   return (
@@ -31,6 +32,10 @@ const Home = () => {
       <Container>
         <Title>Async Actions Using Generators</Title>
         <Quote />
+      </Container>
+      <Container>
+        <Title>Snapshots</Title>
+        <Snapshot />
       </Container>
 
       <Footer />
