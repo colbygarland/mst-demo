@@ -5,7 +5,10 @@ export const Snapshot = () => {
   const { employeeStore } = useStore();
 
   function getSnap() {
-    console.dir(getSnapshot(employeeStore.employees));
+    const snap = getSnapshot(employeeStore.employees);
+    const formattedSnap = JSON.stringify(snap, null, 2);
+    console.dir(formattedSnap);
+    alert(formattedSnap);
   }
 
   return (
